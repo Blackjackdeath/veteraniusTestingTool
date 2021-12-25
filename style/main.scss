@@ -1,0 +1,25 @@
+@import 'base/base';
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adminBox{
+    width: 75%;
+    min-height: 50vh;
+    border: 1px solid black;
+    padding: 20px;
+    &__qestion{
+        width: 90%;
+        height: 30vh;
+        resize: none;
+        margin: 10px;
+    }
+    &Answer{
+        margin: 10px;
+        &__text{
+            margin-right: 10px;
+        }
+    }
+}
