@@ -15,3 +15,5 @@ const response=await fetch('https://server/api/test', {
     //             },
     //             body: JSON.stringify(modelObj)
     //         });
+Пароль: Admin
+password: 1
