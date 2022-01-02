@@ -12,7 +12,8 @@ function answerArray(selector){
     };
     for(let i=0; i<document.querySelectorAll(selector).length;i++){
        obj.answer=document.querySelectorAll(selector)[i].value;
-       obj.right=document.querySelectorAll(selector)[i].nextElemetSibling.checked;
+       console.log(document.querySelectorAll(selector)[i].nextElementSibling);
+       obj.right=document.querySelectorAll(selector)[i].nextElementSibling.checked;
        arr.push(Object.assign({},obj))
     };
     return arr;
@@ -20,8 +21,8 @@ function answerArray(selector){
 
 function send(){
     modelObj.qestion=document.getElementsByTagName('textarea')[0].value;
+    let i=0;
     while (true) {
-        let i=0;
         if (document.querySelectorAll('.adminBoxTypeAnswerBoxAnswer__input')[i].checked){
             modelObj.type=document.querySelectorAll('.adminBoxTypeAnswerBoxAnswer__input')[i].value;
             break;
