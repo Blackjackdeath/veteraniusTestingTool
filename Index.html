@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,30 +8,83 @@
     <title>TestingTool</title>
     <link rel="stylesheet" href="./style/main.css">
 </head>
+
 <body>
-    <div class="wrapper">
-        <div class="adminBox">
-            <p>Enter qestion</p>
-            <textarea class="adminBox__qestion"></textarea>
-            <div class="adminBoxAnswer">
-                <input type="text" id="answer1" class="adminBoxAnswer__text"><label for="answer1">Answer1</label>
-                <input type="radio" name="trueAnswer" checked>
+    <div class="modalWindow">
+        <div class="loginBox">
+            <p class="loginBox__text">Логін</p>
+            <input type="text" class="loginBox__input" id="login" placeholder="Введіть логін">
+            <p class="loginBox__text">Пароль</p>
+            <input type="password" class="loginBox__input" id="password" placeholder="Введіть пароль">
+            <div class="loginBoxButtons">
+                <button class="loginBoxButtons__button accept" type="button">ОК</button>
+                <button class="loginBoxButtons__button cancel" type="button">Відміна</button>
             </div>
-            <div class="adminBoxAnswer">
-                <input type="text" id="answer2" class="adminBoxAnswer__text"><label for="answer1">Answer2</label>
-                <input type="radio" name="trueAnswer">
-            </div>
-            <div class="adminBoxAnswer">
-                <input type="text" id="answer3" class="adminBoxAnswer__text"><label for="answer1">Answer3</label>
-                <input type="radio" name="trueAnswer">
-            </div>
-            <div class="adminBoxAnswer">
-                <input type="text" id="answer4" class="adminBoxAnswer__text"><label for="answer1">Answer4</label>
-                <input type="radio" name="trueAnswer">
-            </div>
-            <button type="button" onclick="send()">Send</button>           
         </div>
+    </div>
+    <div class="wrapper">
+        <div class="leftMenu">
+            <button type="button">Додати питання</button>
+            <button type="button" disabled>Створити тест</button>
+        </div>
+        <form class="adminBox">
+            <textarea class="adminBox__qestion" placeholder="Введіть текст питання"></textarea>
+            <div class="adminBoxTypeAnswerBox">
+                <div class="adminBoxTypeAnswerBoxAnswer">
+                    <input type="radio" id="typeAnswer1" name="typeAnswer" class="adminBoxTypeAnswerBoxAnswer__input" checked value="one"><label for="typeAnswer1" class="adminBoxTypeAnswerBoxAnswer__label">Одиночний вибір</label>
+                </div>
+                <div class="adminBoxTypeAnswerBoxAnswer">
+                    <input type="radio" id="typeAnswer2" name="typeAnswer" class="adminBoxTypeAnswerBoxAnswer__input" value="many"><label for="typeAnswer2" class="adminBoxTypeAnswerBoxAnswer__label">Множинний вибір</label>
+                </div>
+                <div class="adminBoxTypeAnswerBoxAnswer">
+                    <input type="radio" id="typeAnswer3" name="typeAnswer" class="adminBoxTypeAnswerBoxAnswer__input" value="freedom"><label for="typeAnswer3" class="adminBoxTypeAnswerBoxAnswer__label">Відповідь у вільній формі</label>
+                </div>
+                <div class="adminBoxTypeAnswerBoxAnswer">
+                    <input type="radio" id="typeAnswer4" name="typeAnswer" class="adminBoxTypeAnswerBoxAnswer__input" value="missword"><label for="typeAnswer4" class="adminBoxTypeAnswerBoxAnswe__label">Пропуски</label>
+                </div>
+            </div>
+            <div class="oneChoose">
+                <p class="oneChoose__description">Введіть варіанти відповідів і виберіть одну правильну</p>
+                <div class="oneChooseAnswer">
+                    <input type="text" class="oneChooseAnswer__text">
+                    <input type="radio" name="trueAnswer" checked>
+                </div>
+                <div class="oneChooseAnswer">
+                    <input type="text" id="answer2" class="oneChooseAnswer__text">
+                    <input type="radio" name="trueAnswer">
+                </div>
+                <div class="oneChooseAnswer">
+                    <input type="text"  class="oneChooseAnswer__text">
+                    <input type="radio" name="trueAnswer">
+                </div>
+                <div class="oneChooseAnswer">
+                    <input type="text"  class="oneChooseAnswer__text">
+                    <input type="radio" name="trueAnswer">
+                </div> 
+            </div>
+            <div class="manyChoose">
+                <p class="oneChoose__description">Введіть варіанти відповідів і виберіть кілька правильних</p>
+                <div class="manyChooseAnswer">
+                    <input type="text" id="answer1" class="manyChooseAnswer__text">
+                    <input type="checkbox">
+                </div>
+                <div class="manyChooseAnswer">
+                    <input type="text" id="answer2" class="manyChooseAnswer__text">
+                    <input type="checkbox">
+                </div>
+                <div class="manyChooseAnswer">
+                    <input type="text" id="answer3" class="manyChooseAnswer__text">
+                    <input type="checkbox">
+                </div>
+                <div class="manyChooseAnswer">
+                    <input type="text" id="answer4" class="manyChooseAnswer__text">
+                    <input type="checkbox">
+                </div> 
+            </div>
+            <button type="button" onclick="send()">Send</button>
+        </form>
     </div>
     <script src="script/script.js"></script>
 </body>
+
 </html>

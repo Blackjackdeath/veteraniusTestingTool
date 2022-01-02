@@ -263,6 +263,11 @@ textarea {
   padding: 0.2em 0;
 }
 
+body {
+  background-image: url(../image/background.jpg);
+  background-size: cover;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -273,27 +278,161 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 0;
+}
+
+.leftMenu {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100px;
+  height: 100%;
+  background-color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .adminBox {
   width: 75%;
   min-height: 50vh;
-  border: 1px solid black;
   padding: 20px;
+  background-color: white;
+  -webkit-box-shadow: 0 0 4px 2px black;
+          box-shadow: 0 0 4px 2px black;
+  border-radius: 5px;
 }
 
 .adminBox__qestion {
-  width: 90%;
-  height: 30vh;
+  width: 97%;
+  height: 200px;
+  border: 1px dotted black;
   resize: none;
   margin: 10px;
+  font-size: 20px;
 }
 
-.adminBoxAnswer {
+.adminBoxTypeAnswerBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.adminBoxTypeAnswerBoxAnswer__input {
+  margin-right: 5px;
+}
+
+.adminBoxTypeAnswerBoxAnswer__label {
+  color: black;
+}
+
+.oneChoose {
+  padding: 10px;
+}
+
+.oneChoose__description {
   margin: 10px;
 }
 
-.adminBoxAnswer__text {
+.oneChooseAnswer {
+  margin: 10px;
+}
+
+.oneChooseAnswer__text {
   margin-right: 10px;
+}
+
+.manyChoose {
+  padding: 10px;
+  display: none;
+}
+
+.manyChoose__description {
+  margin: 10px;
+}
+
+.manyChooseAnswer {
+  margin: 10px;
+}
+
+.manyChooseAnswer__text {
+  margin-right: 10px;
+}
+
+.modalWindow {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 99;
+}
+
+.loginBox {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+  height: 135px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: silver;
+  padding: 20px;
+}
+
+.loginBox__text {
+  margin-bottom: 5px;
+}
+
+.loginBox__input {
+  margin-bottom: 15px;
+  width: 290px;
+}
+
+.loginBoxButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.loginBoxButtons__button {
+  width: 100px;
+  height: 30px;
+  border: none;
+  color: white;
+}
+
+.accept {
+  background-color: #79bd15;
+}
+
+.accept:hover {
+  -webkit-box-shadow: 0 0 0 2px greenyellow;
+          box-shadow: 0 0 0 2px greenyellow;
+}
+
+.cancel {
+  background-color: red;
+}
+
+.cancel:hover {
+  -webkit-box-shadow: 0 0 0 2px #f58b8b;
+          box-shadow: 0 0 0 2px #f58b8b;
 }
 /*# sourceMappingURL=main.css.map */
