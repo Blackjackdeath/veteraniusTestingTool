@@ -324,7 +324,6 @@ body {
   width: 95%;
   min-height: 300px;
   padding: 10px 20px;
-  display: none;
 }
 
 .mainInfoDescription__text {
@@ -390,7 +389,7 @@ body {
 }
 
 .mainTestBox {
-  display: block;
+  display: none;
 }
 
 .mainTestBoxQuestion {
@@ -418,6 +417,13 @@ body {
 
 .mainTestBoxAnswerBox__span {
   margin-left: 10px;
+}
+
+.mainTestBoxAnswer .answer__textArea {
+  resize: none;
+  width: 100%;
+  height: 80px;
+  margin: 10px 0px;
 }
 
 .mainTestBoxButton {

@@ -41,7 +41,7 @@ body{
         width: 95%;
         min-height: 300px;
         padding: 10px 20px;
-        display: none;
+        // display: none;
         &Description{
             &__text{
                margin: 10px;
@@ -97,7 +97,7 @@ body{
     }
     &TestBox{
         @extend .mainInfo;
-        display: block;
+        display: none;
         &Question{
             width: 100%;
             min-height: 200px;
@@ -122,6 +122,14 @@ body{
                     
                 }
             }
+            .answer{
+                &__textArea{
+                    resize: none;
+                    width: 100%;
+                    height: 80px;
+                    margin: 10px 0px;
+                }
+            }
         }
         &Button{
             display: flex;
@@ -135,3 +143,4 @@ body{
 .emailEdit{
     margin-left: 75px;
 }
+
