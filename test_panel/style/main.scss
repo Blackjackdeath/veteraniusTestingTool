@@ -14,7 +14,7 @@ body{
 }
 .main{
     width: 800px;
-    height: 400px;
+    min-height: 400px;
     background-color: white;
     border: 1px solid black;
     box-shadow: 1px 1px 1px black;
@@ -39,8 +39,9 @@ body{
     }
     &Info{
         width: 95%;
-        height: 300px;
+        min-height: 300px;
         padding: 10px 20px;
+        display: none;
         &Description{
             &__text{
                margin: 10px;
@@ -92,6 +93,42 @@ body{
             margin: 20px 10px;
             width: 70px;
             height: 25px;
+        }
+    }
+    &TestBox{
+        @extend .mainInfo;
+        display: block;
+        &Question{
+            width: 100%;
+            min-height: 200px;
+            display: flex;
+            &__img{
+                display: block;
+                width: 200px;
+                height: 200px;
+            }
+            &__text{
+                width: 550px;
+                text-align: justify;
+            }
+        }
+        &Answer{
+            &Box{
+                margin-bottom: 10px;
+                &__span{
+                    margin-left: 10px;
+                }
+                &__input{
+                    
+                }
+            }
+        }
+        &Button{
+            display: flex;
+            justify-content: space-between;
+            &Navigation{
+                display: flex;
+            }
         }
     }
 }

@@ -284,7 +284,7 @@ body {
 
 .main {
   width: 800px;
-  height: 400px;
+  min-height: 400px;
   background-color: white;
   border: 1px solid black;
   -webkit-box-shadow: 1px 1px 1px black;
@@ -320,10 +320,11 @@ body {
   margin-right: 20px;
 }
 
-.mainInfo {
+.mainInfo, .mainTestBox {
   width: 95%;
-  height: 300px;
+  min-height: 300px;
   padding: 10px 20px;
+  display: none;
 }
 
 .mainInfoDescription__text {
@@ -386,6 +387,52 @@ body {
   margin: 20px 10px;
   width: 70px;
   height: 25px;
+}
+
+.mainTestBox {
+  display: block;
+}
+
+.mainTestBoxQuestion {
+  width: 100%;
+  min-height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainTestBoxQuestion__img {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+.mainTestBoxQuestion__text {
+  width: 550px;
+  text-align: justify;
+}
+
+.mainTestBoxAnswerBox {
+  margin-bottom: 10px;
+}
+
+.mainTestBoxAnswerBox__span {
+  margin-left: 10px;
+}
+
+.mainTestBoxButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainTestBoxButtonNavigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .emailEdit {
