@@ -2,6 +2,7 @@ let emailRegExp = /^[\w_\-\.]+@\w+\.\w+$/;
 let userRegexp = /^[\w]+\s+[\w]+$/;
 let test = {};
 let count = 1;
+let time=0;
 function start() {
     let obj = {};
     let arrNameUser = [];
@@ -31,11 +32,27 @@ function checkInfoUser() {
 };
 
 function init() {
+    let [m, s]=document.querySelector('.mainHeader__timer').textContent.split(':');
+    time=parseInt(m)*60+parseInt(s);
+    document.querySelector('.back').disabled=true;
     document.querySelector('.mainLogin__button').addEventListener('click', checkInfoUser);
     document.querySelector('.next').addEventListener('click', () => {
+        if (document.querySelector('.back').disabled===true){
+            document.querySelector('.back').disabled=false;
+        };
         count++;
-        if (count === test.length) {
+        if (count === test.length-1) {
             document.querySelector('.next').disabled = true;
+        }
+        render(count, test);
+    });
+    document.querySelector('.back').addEventListener('click', () => {
+        if (document.querySelector('.next').disabled===true){
+            document.querySelector('.next').disabled=false;
+        };
+        count--;
+        if (count === 1) {
+            document.querySelector('.back').disabled = true;
         }
         render(count, test);
     });
@@ -55,13 +72,25 @@ async function request(user) {
         document.querySelector('.mainInfo').style.display = 'none';
         document.querySelector('.mainTestBox').style.display = 'block';
         render(1, test);
+        clock=setInterval(timer,1000);
+
     } catch (error) {
         console.log(error);
     };
 };
 
+checkTime = (t) => {
+    if (t < 10) { return '0' + t }
+    else
+        return t;
+};
+
 function timer() {
-    //Work;
+    time--;
+    let minute = checkTime(Math.trunc(time / 60));
+    let second = checkTime(time % 60);
+    document.querySelector('.mainHeader__timer').textContent = minute + ':' + second;
+    if (time==0) clearInterval(clock);
 };
 
 function render(count, test) {
