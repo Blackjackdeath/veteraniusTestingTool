@@ -1,7 +1,7 @@
 @import 'base/base';
 
 body{
-    background-image: url(../../image/background.jpg);
+    background-image: url('./image/background.jpg');
     background-size: cover;
    
 }
@@ -106,6 +106,7 @@ body{
                 display: block;
                 width: 200px;
                 height: 200px;
+                margin: 10px;
             }
             &__text{
                 width: 550px;
@@ -136,7 +137,17 @@ body{
             justify-content: space-between;
             &Navigation{
                 display: flex;
+                width: 150px;
+                justify-content: space-between;
             }
+        }
+    }
+    &EndTest{
+        @extend .mainInfo;
+        display: none;
+        &__result{
+            font-weight: bold;
+            font-size: 20px;
         }
     }
 }

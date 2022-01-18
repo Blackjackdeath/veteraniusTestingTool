@@ -13,8 +13,8 @@
     <div class="wrapper">
         <div class="main">
             <div class="mainHeader">
-                <div class="mainHeader__nameTest">Test</div>
-                <div class="mainHeader__timer">10:00</div>
+                <div class="mainHeader__nameTest">Тест</div>
+                <div class="mainHeader__timer">Час:--:--</div>
             </div>
             <div class="mainInfo">
                 <div class="mainInfoDescription">
@@ -41,34 +41,38 @@
             </div>
             <div class="mainTestBox">
                  <div class="mainTestBoxQuestion">
-                     <img src="../image/no-image-icon-1.jpg" class="mainTestBoxQuestion__img">
+                     <img src="./image/no-image-icon-1.jpg" class="mainTestBoxQuestion__img">
                      <p class="mainTestBoxQuestion__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ipsa molestias beatae quaerat, laudantium quos atque accusantium id quis dolorem accusamus aperiam quas error architecto porro libero voluptate dignissimos animi.</p>
                  </div>
                  <div class="mainTestBoxAnswer">
                      <div class="mainTestBoxAnswerBox">
-                        <input type="radio" name="radio" id="" class="mainTestBoxAnswerBox__input"><span class="mainTestBoxAnswerBox__span">Answer1</span>
+                        <input type="checkbox" name="" id="" class="mainTestBoxAnswerBox__input"><span class="mainTestBoxAnswerBox__span">Answer1</span>
                      </div>
                      <div class="mainTestBoxAnswerBox">
-                        <input type="radio" name="radio" id="" class="mainTestBoxAnswerBox__input"><span class="mainTestBoxAnswerBox__span">Answer2</span>
+                        <input type="checkbox" name="" id="" class="mainTestBoxAnswerBox__input"><span class="mainTestBoxAnswerBox__span">Answer2</span>
                      </div>
                      <div class="mainTestBoxAnswerBox">
-                        <input type="radio" name="radio" id="" class="mainTestBoxAnswerBox__input"><span class="mainTestBoxAnswerBox__span">Answer3</span>
+                        <input type="checkbox" name="" id="" class="mainTestBoxAnswerBox__input"><span class="mainTestBoxAnswerBox__span">Answer3</span>
                      </div>
                      <div class="mainTestBoxAnswerBox">
-                        <input type="radio" name="radio" id="" class="mainTestBoxAnswerBox__input"><span class="mainTestBoxAnswerBox__span">Answer4</span>
+                        <input type="checkbox" name="" id="" class="mainTestBoxAnswerBox__input"><span class="mainTestBoxAnswerBox__span">Answer4</span>
                      </div>
                      
                  </div>
                  <div class="mainTestBoxButton">
                      <div class="mainTestBoxButtonNavigation">
-                         <button type="button" class="mainTestBoxButtonNavigation__button next">Вперед</button>
-                         <button type="button" class="mainTestBoxButtonNavigation__button back">Назад</button>
+                        <button type="button" class="mainTestBoxButtonNavigation__button back">Назад</button>
+                        <button type="button" class="mainTestBoxButtonNavigation__button next">Вперед</button>               
                      </div>
                      <button type="button" class="mainTestBoxButton__button end">Завершити</button>
                  </div>
             </div>
+            <div class="mainEndTest">
+                <p class="mainEndTest__result userId"></p>
+                <p class="mainEndTest__result points"></p>
+                <p class="mainEndTest__result percent"></p>
+            </div>
         </div>
-
     </div>
     <script src="./script/script.js"></script>
 </body>
