@@ -1,5 +1,5 @@
 let emailRegExp = /^[\w_\-\.]+@\w+\.\w+$/;
-let userRegexp = /^[\w]+\s+[\w]+$/;
+let userRegexp = /^[а-яА-ЯіІ]+\s+[а-яА-ЯіІ]+\s?+$/;
 let test = {};
 let count = 1;
 let time = 0;
@@ -99,7 +99,9 @@ function timer() {
     let minute = checkTime(Math.trunc(time / 60));
     let second = checkTime(time % 60);
     document.querySelector('.mainHeader__timer').textContent = 'Час:' + minute + ':' + second;
-    if (time == 0) clearInterval(clock);
+    if (time == 0) {
+        showResult();
+    }
 };
 //Функція показу і навігації по питаннях тесту
 function render(obj) {
@@ -185,8 +187,9 @@ function rememberAnswer(obj) {
 };
 //Функція провірки чи є відповідь уже в обєкті
 function showResult(){
+    clearInterval(clock);
     rememberAnswer(test[test.length-1]);
-    test[test.length-1]['answer_time']=Date.now()-timeQuestion;
+    test[test.length-1]['answer_time']=Math.trunc((Date.now()-timeQuestion)/1000);
     remakeObj();
     document.querySelector('.mainTestBox').style.display = 'none';
     document.querySelector('.mainEndTest').style.display = 'block';
