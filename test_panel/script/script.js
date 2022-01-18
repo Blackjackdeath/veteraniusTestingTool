@@ -185,6 +185,8 @@ function rememberAnswer(obj) {
 };
 //Функція провірки чи є відповідь уже в обєкті
 function showResult(){
+    rememberAnswer(test[test.length-1]);
+    test[test.length-1]['answer_time']=Date.now()-timeQuestion;
     remakeObj();
     document.querySelector('.mainTestBox').style.display = 'none';
     document.querySelector('.mainEndTest').style.display = 'block';
@@ -204,9 +206,9 @@ async function sendResult(){
         console.log(response);
         result = await response.json();
         console.log(result);
-        document.querySelector('.userId').textContent=result.user_id;
-        document.querySelector('.points').textContent=result.points;
-        document.querySelector('.percent').textContent=result.percent;
+        document.querySelector('.userId').textContent+=result.user_id;
+        document.querySelector('.points').textContent+=result.points;
+        document.querySelector('.percent').textContent+=result.percent;
     } catch (error) {
         console.log(error);
     };
@@ -217,8 +219,16 @@ function remakeObj(){
         let obj={};
         obj['user_id']=test[0].user_id;
         obj['question_id']=test[i].id;
-        obj['answer']=test[i].answer;
-        obj['answer_time']=test[i].answer_time;
+        if (test[i].answer===undefined){
+            obj['answer']="";
+        }else{
+            obj['answer']=test[i].answer;
+        };
+        if (test[i].answer_time===undefined){
+            obj['answer_time']=0;
+        }else{
+            obj['answer_time']=test[i].answer_time;
+        };
         answerTestObj.push(obj);
     };
     answerTestObj=JSON.stringify(answerTestObj);
