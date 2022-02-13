@@ -14,15 +14,15 @@
         <div class="main">
             <div class="mainHeader">
                 <div class="mainHeader__nameTest">Тест</div>
+                <div class="mainHeader__askCount">Кількість питань:--/--</div>
                 <div class="mainHeader__timer">Час:--:--</div>
             </div>
             <div class="mainInfo">
                 <div class="mainInfoDescription">
-                    <p class="mainInfoDescription__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Provident, necessitatibus.</p>
-                    <p class="mainInfoDescription__rule">Rule test</p>
-                    <p class="mainInfoDescription__textRule">Lorem ipsum dolor sit amet.</p>
-                    <p class="mainInfoDescription__textRule">Lorem ipsum dolor sit amet.</p>
+                    <p class="mainInfoDescription__text">Опис тесту. Типу бла-бла-бла)))</p>
+                    <p class="mainInfoDescription__rule">Правила тесту</p>
+                    <p class="mainInfoDescription__textRule">1. Праивл не має</p>
+                    <p class="mainInfoDescription__textRule">2. Диви друге правило</p>
                 </div>
                 <div class="mainLogin">
                     <div class="mainLoginBox">
@@ -35,13 +35,18 @@
                         <input type="email" name="" id="" class="mainLoginBox__input emailEdit"></input>
                         <div class="mainLoginBoxEmailError">Неправильний email</div>
                     </div>
+                    <div class="mainLoginBox">
+                        <span class="mainLoginBox__text">Я даю дозвіл на обробку моїх персональних даних</span>
+                        <input type="checkbox" name="" id="permission" class="mainLoginBox__input"></input>
+                        <div class="mainLoginBoxPermissionError">Підтвердіть дозвіл на обробку персональних даних</div>
+                    </div>
                 </div>
-                <div class="mainInfoCountQuestion">Count question: 4</div>
+                <div class="mainInfoCountQuestion">Кількість питань: ???</div>
                 <button type="button" class="mainLogin__button">Далі</button>
             </div>
             <div class="mainTestBox">
                  <div class="mainTestBoxQuestion">
-                     <img src="./image/no-image-icon-1.jpg" class="mainTestBoxQuestion__img">
+                     <img src="" class="mainTestBoxQuestion__img">
                      <p class="mainTestBoxQuestion__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ipsa molestias beatae quaerat, laudantium quos atque accusantium id quis dolorem accusamus aperiam quas error architecto porro libero voluptate dignissimos animi.</p>
                  </div>
                  <div class="mainTestBoxAnswer">
@@ -71,6 +76,12 @@
                 <p class="mainEndTest__result userId">ID Користувача:</p>
                 <p class="mainEndTest__result points">Кількість балів:</p>
                 <p class="mainEndTest__result percent">Процент:</p>
+            </div>
+        </div>
+        <div class="modalWindow">
+            <div class="modalWindowMessageBox">
+                <p class="modalWindowMessageBox__text">Вибачте але ви вже проходили тест. Для повторного проходження тесту зверніться до організаторів</p>
+                <button type="button" class="modalWindowMessageBox__button">OK</button>
             </div>
         </div>
     </div>

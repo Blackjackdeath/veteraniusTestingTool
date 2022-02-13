@@ -1,9 +1,7 @@
 @import 'base/base';
 
 body{
-    background-image: url('./image/background.jpg');
-    background-size: cover;
-   
+ background-color: bisque;
 }
 .wrapper{
    width: 100%;
@@ -32,9 +30,10 @@ body{
             margin-left: 20px;
         }
         &__timer{
-            font-size: 30px;
-            font-weight: bold;
-            margin-right: 20px;
+            @extend .mainHeader__nameTest;
+        }
+        &__askCount{
+            @extend .mainHeader__nameTest;
         }
     }
     &Info{
@@ -88,6 +87,11 @@ body{
             &LoginError{
                 @extend .mainLoginBoxEmailError;
             }
+            &PermissionError{
+                @extend .mainLoginBoxEmailError;
+                height: 40px;
+                width: 200px;
+            }
         }
         &__button{
             margin: 20px 10px;
@@ -111,9 +115,11 @@ body{
             &__text{
                 width: 550px;
                 text-align: justify;
+                font-size: 14px;
             }
         }
         &Answer{
+            font-size: 14px;
             &Box{
                 margin-bottom: 10px;
                 &__span{
@@ -154,4 +160,72 @@ body{
 .emailEdit{
     margin-left: 75px;
 }
-
+.back{
+    display: none;
+}
+.modalWindow{
+    position: absolute;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(59, 40, 40, 0.212);
+    z-index: 99;
+    &MessageBox{
+       position: relative; 
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%,-50%);
+       width: 300px;
+       height: 150px;
+       border-radius: 3px;
+       border: 2px solid red;
+       background-color: white;
+       display: flex;
+       align-items: center;
+       flex-direction: column;
+       &__text{
+           margin: 10px;
+           text-align: center;
+       }
+       &__button{
+        @extend .mainLogin__button; 
+       }
+    }
+}
+@media screen and (max-width: 590px) {
+    .main{
+        max-width: 480px;
+    }
+    .mainTestBoxAnswer{
+        width: 95%;
+        margin-right: 5px;
+        }
+    }
+@media screen and (max-width:484px){
+    .main{
+        max-width:380px;
+    }
+    .mainTestBoxAnswer{
+        width: 95%; 
+        margin-right: 5px; 
+    }
+    .mainTestBoxQuestion__text{
+        margin-right: 10px;
+    }
+    .mainTestBoxButton__button.end{
+        margin-right: 10px;
+    }
+}
+    
+@media screen and (max-width:320px) {
+    .main{
+        max-width: 300px;
+    }
+    .mainTestBoxAnswer{
+        margin-right: 5px;
+        width: 95%;
+    }
+    .mainTestBoxQuestion__text{
+        margin-right: 10px;
+    }
+}
