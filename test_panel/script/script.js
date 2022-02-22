@@ -6,6 +6,7 @@ let time = 0;
 let timeQuestion = 0;
 let answerTestObj = [];
 let result = {};
+let m=0;
 
 //Функція старт
 function start() {
@@ -43,6 +44,7 @@ function checkInfoUser() {
 };
 // Функція ініціалізації привязка евентів до кнопок
 function init() {
+    getInfoTest();
     document.querySelector('.mainLogin__button').addEventListener('click', checkInfoUser);
     document.querySelector('.modalWindowMessageBox__button').addEventListener('click',()=>{
         document.querySelector('.modalWindow').style.display = 'none';
@@ -90,7 +92,6 @@ async function request(user) {
         } else {
             document.querySelector('.mainInfo').style.display = 'none';
             document.querySelector('.mainTestBox').style.display = 'block';
-            let m = test[0].time_for_test;
             time = parseInt(m) * 60;
             render(test[1]);
             clock = setInterval(timer, 1000);
@@ -250,6 +251,19 @@ function remakeObj() {
         answerTestObj.push(obj);
     };
     answerTestObj = JSON.stringify(answerTestObj);
+};
+//Функція отримання даних про тест.
+async function getInfoTest(){
+    try {
+        const response = await fetch('https://alexdko.pythonanywhere.com/testing/');
+        const infotest = await response.json();
+        m=infotest.time_for_test;
+        document.querySelector('.mainHeader__timer').textContent = 'Час:' + m + ':00';
+        document.querySelector('.mainInfoCountQuestion').textContent='Кількість питань:'+infotest.questions_count;
+        document.querySelector('.mainInfoDescription__text').textContent=infotest.test_description;
+    } catch (error) {
+        console.log(error);
+    };
 }
 //початок роботи
 init();
